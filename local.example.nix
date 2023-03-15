@@ -5,13 +5,13 @@
 { ... }:
 {
   # Define your hostname.
-  networking.hostName = "dexter";
+  networking.hostName = "hostname";
 
   # Set your time zone.
-  time.timeZone = "Europe/Zurich";
+  time.timeZone = "UTC";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   # Configure keymap in X11
   services.xserver = {

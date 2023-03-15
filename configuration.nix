@@ -25,6 +25,18 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Allow extra substituters
+  nix.settings.trusted-substituters = [
+    "https://cache.nixos.org/"
+    "https://nix-community.cachix.org"
+  ];
+  nix.settings.trusted-public-keys = [
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
+  nix.settings.trusted-users = [
+    "@wheel"
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
