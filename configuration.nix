@@ -26,6 +26,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Set the hardware clock in local time to appease Windows.
+  time.hardwareClockInLocalTime = true;
+
   # Allow extra substituters
   nix.settings.trusted-substituters = [
     "https://cache.nixos.org/"
