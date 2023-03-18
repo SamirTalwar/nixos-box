@@ -9,7 +9,7 @@
     description = "Samir Talwar";
     # generate with `mkpasswd` and replace this line
     hashedPassword = ".........................................................................";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };
