@@ -23,11 +23,21 @@
     "/crypto_keyfile.bin" = null;
   };
 
+  # Set the hardware clock in local time to appease Windows.
+  time.hardwareClockInLocalTime = true;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set the hardware clock in local time to appease Windows.
-  time.hardwareClockInLocalTime = true;
+  # Enable RealtimeKit, which is used by certain services, e.g. PulseAudio
+  security.rtkit.enable = true;
+
+  # Enable audio
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
 
   # Allow extra substituters
   nix.settings.trusted-substituters = [
