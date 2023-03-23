@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./local.nix
       ./users.nix
@@ -38,6 +39,10 @@
     alsa.enable = true;
     pulse.enable = true;
   };
+
+  # Use GDM as the login screen
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
 
   # Allow extra substituters
   nix.settings.trusted-substituters = [
