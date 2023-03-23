@@ -44,6 +44,10 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
 
+  # Set up a keyring, and connect it to the login screen
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.gdm.enableGnomeKeyring = true;
+
   # Allow extra substituters
   nix.settings.trusted-substituters = [
     "https://cache.nixos.org/"
@@ -67,6 +71,10 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+  };
+
+  programs.seahorse = {
+    enable = true;
   };
 
   programs.sway = {
