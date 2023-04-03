@@ -68,6 +68,10 @@
     wget
   ];
 
+  environment.shells = with pkgs; [
+    nushell
+  ];
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
