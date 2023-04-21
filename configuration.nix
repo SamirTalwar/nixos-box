@@ -33,6 +33,17 @@
   # Enable RealtimeKit, which is used by certain services, e.g. PulseAudio
   security.rtkit.enable = true;
 
+  # Enable xdg-desktop-portal for screen sharing
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
   # Enable audio
   services.pipewire = {
     enable = true;
