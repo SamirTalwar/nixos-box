@@ -79,6 +79,11 @@
     wget
   ];
 
+  environment.sessionVariables = {
+    # Enable Ozone for Electron apps to improve Wayland support.
+    NIXOS_OZONE_WL = "1";
+  };
+
   environment.shells = with pkgs; [
     nushell
   ];
