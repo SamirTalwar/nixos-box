@@ -92,6 +92,11 @@
     enable = true;
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+  };
+
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -100,6 +105,12 @@
   programs.zsh.enable = true;
 
   virtualisation.docker.enable = true;
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-run"
+  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
