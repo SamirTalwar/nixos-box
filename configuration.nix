@@ -62,6 +62,11 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.gdm.enableGnomeKeyring = true;
 
+  # Suspend when the power button is pressed
+  services.logind.extraConfig = ''
+    HandlePowerKey=suspend
+  '';
+
   # Allow extra substituters
   nix.settings.trusted-substituters = [
     "https://cache.nixos.org/"
