@@ -11,6 +11,6 @@
     hashedPassword = ".........................................................................";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 }
