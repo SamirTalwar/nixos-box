@@ -13,13 +13,16 @@
       ./users.nix
     ];
 
+  # Support NTFS mounts.
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  # Setup keyfile
+  # Setup the keyfile.
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
