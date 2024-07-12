@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./lix.nix
       ./local.nix
       ./users.nix
     ];
