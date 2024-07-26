@@ -71,6 +71,8 @@
     HandlePowerKey=suspend
   '';
 
+  services.tailscale.enable = true;
+
   # Allow extra substituters
   nix.settings.trusted-substituters = [
     "https://cache.nixos.org/"
