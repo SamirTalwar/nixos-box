@@ -35,6 +35,9 @@
     "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
   ];
 
+  # Optimize the store once in a while.
+  nix.settings.auto-optimise-store = true;
+
   # Support NTFS mounts.
   boot.supportedFilesystems = [ "ntfs" ];
 
