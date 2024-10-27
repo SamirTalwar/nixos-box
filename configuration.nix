@@ -133,6 +133,7 @@
     "steam"
     "steam-original"
     "steam-run"
+    "steam-unwrapped"
   ];
 
   # Open ports in the firewall.
