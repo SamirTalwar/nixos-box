@@ -14,6 +14,27 @@
       ./users.nix
     ];
 
+  # Enable experimental commands that aren't so experimental.
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  # Enable Nix overrides for all users that can use `sudo`.
+  nix.settings.trusted-users = [
+    "@wheel"
+  ];
+
+  # Allow extra substituters.
+  nix.settings.substituters = [
+    "https://nix-community.cachix.org"
+    "https://cache.lix.systems"
+  ];
+  nix.settings.trusted-public-keys = [
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
+  ];
+
   # Support NTFS mounts.
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -72,22 +93,6 @@
   '';
 
   services.tailscale.enable = true;
-
-  # Allow extra substituters
-  nix.settings.trusted-substituters = [
-    "https://cache.nixos.org/"
-    "https://nix-community.cachix.org"
-  ];
-  nix.settings.trusted-public-keys = [
-    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  ];
-  nix.settings.trusted-users = [
-    "@wheel"
-  ];
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
