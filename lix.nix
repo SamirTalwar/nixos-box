@@ -1,3 +1,5 @@
+# Source: https://lix.systems/add-to-config/#non-flake-configurations
+
 # This includes the Lix NixOS module in your configuration along with the
 # matching version of Lix itself.
 #
@@ -10,8 +12,8 @@
 let
   module = fetchTarball {
     name = "source";
-    url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-1.tar.gz";
-    sha256 = "sha256-6U0CyPycIBc04hbYy2hBINnVso58n/ZyywY2BD3hu+s=";
+    url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
+    sha256 = "sha256-DN5/166jhiiAW0Uw6nueXaGTueVxhfZISAkoxasmz/g=";
   };
   lixSrc = fetchTarball {
     name = "source";
@@ -19,7 +21,4 @@ let
     sha256 = "sha256-hiGtfzxFkDc9TSYsb96Whg0vnqBVV7CUxyscZNhed0U=";
   };
 in
-# This is the core of the code you need; it is an exercise to the
-# reader to write the sources in a nicer way, or by using npins or
-# similar pinning tools.
 import "${module}/module.nix" { lix = lixSrc; }
