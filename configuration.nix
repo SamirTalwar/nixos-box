@@ -41,10 +41,17 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 5;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 5;
+    };
+  };
 
   # Setup the keyfile.
   boot.initrd.secrets = {

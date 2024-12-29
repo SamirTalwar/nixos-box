@@ -39,6 +39,13 @@
     ];
   };
 
+  # Configure booting to Windows.
+  boot.loader.systemd-boot.windows."default" = {
+    title = "Windows";
+    efiDeviceHandle = "HD1a65535a1";
+    sortKey = "a"; # List Windows first so it's the default.
+  };
+
   # Set up users.
   users.users.samir = {
     isNormalUser = true;
