@@ -11,7 +11,6 @@
       ./hardware-configuration.nix
       ./lix.nix
       ./local.nix
-      ./users.nix
     ];
 
   # Enable experimental commands that aren't so experimental.
