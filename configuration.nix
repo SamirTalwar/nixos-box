@@ -51,6 +51,8 @@
       enable = true;
       configurationLimit = 5;
     };
+
+    timeout = 10;
   };
 
   # Setup the keyfile.
